@@ -7,10 +7,13 @@ python manage.py migrate
 echo "🎨 Collecting static files..."
 python manage.py collectstatic --noinput
 
-echo "👤 Creating superuser (if not exists)..."
+echo "👤 Checking for superuser..."
 python manage.py shell <<EOF
 from django.contrib.auth import get_user_model
 User = get_user_model()
-if not User.objects.filter(username="admin").exists():
-    User.objects.create_superuser("Kader", "Ka6570der@gmail.com", "Ka65fan70")
+if not User.objects.filter(username="Kader").exists():
+    User.objects.create_superuser("Kader", "admin@example.com", "adminpass123")
+    print("✅ Superuser 'Kader' created.")
+else:
+    print("ℹ️ Superuser 'Kader' already exists.")
 EOF
