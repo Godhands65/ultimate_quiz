@@ -1,4 +1,14 @@
-pip install -r reauirements.txt
-python manage.py collectstatic --no-input
-python manage.py migrate
+#!/usr/bin/env bash
+
+# --- Activer le script en cas d'erreur ---
+set -o errexit
+
+# --- Appliquer les migrations Django ---
+echo "Applying database migrations..."
+python manage.py migrate --noinput
+
+# --- Collecte des fichiers statiques ---
+echo "Collecting static files..."
+python manage.py collectstatic --noinput
+
 python createsuperuser.py
