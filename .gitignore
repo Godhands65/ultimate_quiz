@@ -3,14 +3,8 @@
 *.pyo
 __pycache__/
 db.sqlite3
-*.sqlite3
 env/
-.env.local
-.env.*.local
-
-# Django specific
-staticfiles/
-media/
+config/.env
 local_settings.py
 
 # === NODE / REACT (frontend) ===
@@ -30,6 +24,5 @@ frontend/.parcel-cache/
 .DS_Store
 .vscode/
 .idea/
-
 # === OS Files ===
 Thumbs.db
