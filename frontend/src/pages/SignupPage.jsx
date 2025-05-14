@@ -21,10 +21,13 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://127.0.0.1:8000/api/auth/users/", formData);
+      await axios.post(
+        "https://ultimate-quiz-furv.onrender.com/api/auth/users/",
+        formData
+      );
 
       const loginRes = await axios.post(
-        "http://127.0.0.1:8000/api/auth/jwt/create/",
+        "https://ultimate-quiz-furv.onrender.com/api/auth/jwt/create/",
         {
           username: formData.username,
           password: formData.password,
@@ -32,7 +35,7 @@ export default function Signup() {
       );
 
       const userRes = await axios.get(
-        "http://127.0.0.1:8000/api/auth/users/me/",
+        "https://ultimate-quiz-furv.onrender.com/api/auth/users/me/",
         {
           headers: { Authorization: `Bearer ${loginRes.data.access}` },
         }

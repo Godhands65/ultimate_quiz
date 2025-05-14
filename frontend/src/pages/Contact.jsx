@@ -12,7 +12,10 @@ export default function Contact() {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      await axios.post('http://127.0.0.1:8000/api/contact/', formData);
+      await axios.post(
+        "https://ultimate-quiz-furv.onrender.com/api/contact/",
+        formData
+      );
       setSuccess(true);
       setFormData({ nom: '', email: '', message: '' });
     } catch (error) {

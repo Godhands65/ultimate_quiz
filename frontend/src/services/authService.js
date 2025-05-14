@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://127.0.0.1:8000/api/auth/';
+const API_URL = 'https://ultimate-quiz-furv.onrender.com/api/auth/';
 
 // 🔐 Inscription
 export const registerUser = async (credentials) => {

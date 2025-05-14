@@ -21,7 +21,7 @@ export default function QuizExamen() {
     if (!user) return;
     axios
       .get(
-        `http://127.0.0.1:8000/api/questions/random/?niveau=${user.niveau}&limit=40`
+        `https://ultimate-quiz-furv.onrender.com/api/questions/random/?niveau=${user.niveau}&limit=40`
       )
       .then((res) => setQuestions(res.data))
       .catch((err) => console.error("Erreur chargement questions examen", err));

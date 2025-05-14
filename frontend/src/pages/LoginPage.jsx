@@ -14,7 +14,7 @@ export default function LoginPage() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://127.0.0.1:8000/api/auth/jwt/create/",
+        "https://ultimate-quiz-furv.onrender.com/api/auth/jwt/create/",
         {
           username,
           password,
@@ -24,7 +24,7 @@ export default function LoginPage() {
       const { access, refresh } = res.data;
 
       const userRes = await axios.get(
-        "http://127.0.0.1:8000/api/auth/users/me/",
+        "https://ultimate-quiz-furv.onrender.com/api/auth/users/me/",
         {
           headers: {
             Authorization: `Bearer ${access}`,

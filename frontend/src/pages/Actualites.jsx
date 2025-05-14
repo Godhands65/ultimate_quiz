@@ -6,7 +6,7 @@ export default function Actualites() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/actualites/")
+      .get("https://ultimate-quiz-furv.onrender.com/api/actualites/")
       .then((res) => setActus(res.data));
   }, []);
 

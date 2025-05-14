@@ -18,7 +18,7 @@ function QuizPage() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/questions/")
+      .get("https://ultimate-quiz-furv.onrender.com/api/questions/")
       .then((res) => setQuestions(res.data));
   }, []);
 
@@ -61,11 +61,14 @@ function QuizPage() {
 
     // Envoi backend
     try {
-      await axios.post("http://127.0.0.1:8000/api/reponses/", {
-        question: currentQuestion.id,
-        reponse_donnee: choice.text,
-        bonne_reponse: correctChoice.text,
-      });
+      await axios.post(
+        "https://ultimate-quiz-furv.onrender.com/api/reponses/",
+        {
+          question: currentQuestion.id,
+          reponse_donnee: choice.text,
+          bonne_reponse: correctChoice.text,
+        }
+      );
     } catch (error) {
       console.error("Erreur d'envoi de réponse", error);
     }
