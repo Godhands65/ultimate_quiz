@@ -2,7 +2,7 @@ export default function About() {
   return (
     <div className="container mt-5">
       <img
-        src="../../public/6b842b39-6aba-440b-87ae-a5f5384cd030.png"
+        src="/6b842b39-6aba-440b-87ae-a5f5384cd030.png"
         alt="Logo Concours_Facile"
         className="mb-4"
         style={{ height: "100px" }}

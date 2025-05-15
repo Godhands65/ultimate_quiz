@@ -30,7 +30,7 @@ const Mascotte = () => {
       }}
     >
       <img
-        src="../../public/ce6dea2a-500c-4acf-ac69-bd078093011f.png"
+        src="/ce6dea2a-500c-4acf-ac69-bd078093011f.png"
         alt="Mascotte"
         style={{ width: "50px", marginRight: "10px" }}
       />
