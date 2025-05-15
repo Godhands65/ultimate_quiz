@@ -13,7 +13,7 @@ export default function AnswersPage() {
     const pdf = new jsPDF();
 
     const logo = new Image();
-    logo.src = "../../public/6b842b39-6aba-440b-87ae-a5f5384cd030.png";
+    logo.src = "6b842b39-6aba-440b-87ae-a5f5384cd030.png";
     logo.onload = () => {
       pdf.addImage(logo, 'PNG', 10, 10, 40, 20);
       let y = 40;

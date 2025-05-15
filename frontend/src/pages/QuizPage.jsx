@@ -40,7 +40,7 @@ function QuizPage() {
     setSelected(choice.id);
     const correctChoice = currentQuestion.choix.find((c) => c.is_true);
     const isCorrect = choice.is_true;
-    console.log(user)
+
 
     setFeedback(
       isCorrect
