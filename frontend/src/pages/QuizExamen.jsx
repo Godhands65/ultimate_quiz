@@ -70,7 +70,7 @@ export default function QuizExamen() {
         setFeedback(null);
         setTransitioning(false);
       } else {
-        navigate("/answers");
+        navigate("/cahier");
       }
     }, 300);
   };

@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('text', models.TextField()),
-                ('matieres', models.CharField(choices=[('maths', 'Mathématiques'), ('francais', 'Français'), ('physique', 'Physique'), ('chimie', 'Chimie'), ('histoire', 'Histoire'), ('geo', 'Geographie'), ('psycho', 'Psychotecnique'), ('actu', 'Actualité'), ('culture G', 'Culture General')], max_length=20)),
+                ('matieres', models.CharField(choices=[('maths', 'Mathématiques'), ('francais', 'Français'), ('physique', 'Physique'), ('chimie', 'Chimie'), ('histoire', 'Histoire'), ('geo', 'Geographie'), ('psycho', 'Psychotecnique'), ('actu', 'Actualité'), ('Culture', 'Cultureeneral')], max_length=20)),
                 ('created_date', models.DateField(auto_now_add=True, verbose_name='Date de création')),
             ],
         ),

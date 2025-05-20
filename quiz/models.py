@@ -5,6 +5,7 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 class Questions (models.Model):
     matieres = [
+        ("svt","Svt"),
         ("maths","Mathématiques"),
         ("francais","Français"),
         ("physique","Physique"),
@@ -13,7 +14,7 @@ class Questions (models.Model):
         ("geo","Geographie"),
         ("psycho","Psychotecnique"),
         ("actu","Actualité"),
-        ("culture G","Culture General")
+        ("Culture","Cultureeneral")
     ]
     
     text = models.TextField()
