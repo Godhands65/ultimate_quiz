@@ -9,6 +9,8 @@ class ChoiceInline(admin.TabularInline):
     
 class QuestionAdmin(admin.ModelAdmin):
     inlines = [ChoiceInline]
+    list_display = ("text","matieres")
+    list_filter = ("text","matieres")
     
 
 admin.site.register(Questions,QuestionAdmin)
