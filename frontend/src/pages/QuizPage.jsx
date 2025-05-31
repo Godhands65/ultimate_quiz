@@ -24,8 +24,22 @@ function QuizPage() {
 
   // Nettoyage du localStorage au lancement
   useEffect(() => {
-    localStorage.removeItem("answerLog");
-  }, []);
+    const fetchQuestions = async () => {
+      try {
+        const niveau = user?.niveau || "BAC";
+        const rand = Math.random();
+        const res = await axios.get(
+          `https://ultimate-quiz-furv.onrender.com/api/questions/random/?niveau=${niveau}&limit=40&rand=${rand}`
+        );
+        setQuestions(res.data);
+      } catch (error) {
+        console.error("Erreur lors du chargement des questions aléatoires :", error);
+      }
+    };
+  
+    fetchQuestions();
+  }, [user]);
+  
 
   // Mettre à jour le localStorage à chaque modification de answerLog
   useEffect(() => {
@@ -106,7 +120,7 @@ function QuizPage() {
     <div className="container mt-5">
       <Mascotte />
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h2>Question {currentIndex + 1}</h2>
+        <h2>Question 🧠👇 </h2>
         <button
           className="btn btn-outline-dark"
           onClick={() => {

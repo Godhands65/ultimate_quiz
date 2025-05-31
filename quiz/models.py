@@ -51,7 +51,9 @@ class CustomUser(AbstractUser):
     ('BEPC', 'BEPC'),
     ('BAC', 'BAC'),
     ('LICENCE', 'LICENCE'),)
-    niveau = models.CharField(max_length=20, choices=NIVEAUX, default='BAC')    
+    niveau = models.CharField(max_length=20, choices=NIVEAUX, default='BAC')
+    whatsapp = models.CharField(max_length=20,blank=True)
+
 
 
 

@@ -11,7 +11,7 @@ export default function About() {
       <h2>À propos de Concours_Facile</h2>
       <p>
         Cette plateforme a pour but d'aider les candidats aux concours directs
-         en leur proposant des quiz adaptés à leur niveau et à
+        du Burkina Faso, en leur proposant des quiz adaptés à leur niveau et à
         jour avec l'actualité.
       </p>
     </div>

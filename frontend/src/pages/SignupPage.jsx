@@ -10,6 +10,8 @@ export default function Signup() {
     email: "",
     password: "",
     niveau: "BEPC",
+    numero:"",
+    concentement:""
   });
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
@@ -88,6 +90,19 @@ export default function Signup() {
           onChange={handleChange}
           required
         />
+        <input
+          type="tel"
+          name="whatsapp"
+          placeholder="Votre numero whatsApp (optionnel)"
+          className="form-control mp-3"
+          onChange={handleChange}
+          required
+        />
+        <small className="text-muted">
+          En fournissant votre numéro, vous acceptez que nous vous ajoutions à
+          une communauté WhatsApp dédiée au concours.
+          Afin de vous informer de tout ce qui se passe dans le site et autres.
+        </small>
 
         <label className="form-label">Niveau scolaire :</label>
         <select
