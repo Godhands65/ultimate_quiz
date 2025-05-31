@@ -44,7 +44,7 @@ class ContactMessageSerializer(serializers.ModelSerializer):
 class UserCreateSerializer(BaseUserCreateSerializer):
     class Meta(BaseUserCreateSerializer.Meta):
         model = CustomUser
-        fields = ('id', 'username', 'email', 'password', 'niveau')
+        fields = ('id', 'username', 'email', 'password', 'niveau',"whatsapp")
         
 class UserSerializer(BaseUserSerializer):
     class Meta(BaseUserSerializer.Meta):
