@@ -10,8 +10,7 @@ export default function Signup() {
     email: "",
     password: "",
     niveau: "BEPC",
-    numero:"",
-    concentement:""
+    whatsapp:"",
   });
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
@@ -22,6 +21,12 @@ export default function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const regexWhatsApp = /^\+?\d{8,15}$/;
+    if (!regexWhatsApp.test(formData.whatsapp)) {
+      toast.error("Numéro WhatsApp invalide !");
+      return;
+    }
+
     try {
       await axios.post(
         "https://ultimate-quiz-furv.onrender.com/api/auth/users/",
@@ -93,16 +98,22 @@ export default function Signup() {
         <input
           type="tel"
           name="whatsapp"
-          placeholder="Votre numero whatsApp (optionnel)"
-          className="form-control mp-3"
+          placeholder="Votre numéro WhatsApp (ex: +226xxxxxxxx)"
+          className="form-control mb-3"
+          value={formData.whatsapp}
           onChange={handleChange}
           required
+          pattern="^\+?\d{8,15}$"
+          title="Veuillez entrer un numéro valide, avec ou sans l'indicatif international"
         />
-        <small className="text-muted">
-          En fournissant votre numéro, vous acceptez que nous vous ajoutions à
-          une communauté WhatsApp dédiée au concours.
-          Afin de vous informer de tout ce qui se passe dans le site et autres.
-        </small>
+
+        <p>
+          <small className="text-muted">
+            En fournissant votre numéro, vous acceptez que nous vous ajoutions à
+            une communauté WhatsApp dédiée au concours. Afin de vous informer de
+            tout ce qui se passe dans le site et autres.
+          </small>
+        </p>
 
         <label className="form-label">Niveau scolaire :</label>
         <select
