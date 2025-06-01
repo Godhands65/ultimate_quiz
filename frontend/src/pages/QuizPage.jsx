@@ -118,7 +118,7 @@ function QuizPage() {
 
   return (
     <div className="container mt-5">
-      <Mascotte />
+      {/* <Mascotte /> */}
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>Question 🧠👇 </h2>
         <button

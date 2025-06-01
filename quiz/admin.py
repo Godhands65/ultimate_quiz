@@ -13,8 +13,13 @@ class QuestionAdmin(admin.ModelAdmin):
     list_filter = ("matieres",)
     search_fields = ("text",)
     
-
+class MessagesAdmin(admin.ModelAdmin):
+    model = ContactMessage
+    list_display = ("nom","email","message",)
+    
+    
+    
 admin.site.register(Questions,QuestionAdmin)
 admin.site.register(Actualite)
-admin.site.register(ContactMessage)
+admin.site.register(ContactMessage,QuestionAdmin)
 admin.site.register(CustomUser)
